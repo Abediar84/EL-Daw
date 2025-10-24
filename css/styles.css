@@ -146,3 +146,102 @@ body[data-page="contact"] footer .btn.primary{ display: none !important; }
   nav li a { display: block; padding: 10px 20px; }
   .nav-toggle { display: block; }
 }
+
+
+/* ===== v4.4.1 Mobile Menu Overlay Fix ===== */
+header{ z-index: 1000; }
+@media (max-width:768px){
+  /* Full-viewport dropdown with opaque background */
+  nav{ position:relative; }
+  nav ul{
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease, transform .2s ease, opacity .2s ease;
+    transform: translateY(-8px);
+    opacity: 0;
+    z-index: 1002;
+  }
+  nav ul.open{
+    max-height: 60vh;
+    padding: 10px 0;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  nav li a{ display:block; padding:12px 20px; }
+  .nav-toggle{ display:block; }
+  /* Dark backdrop behind menu */
+  .nav-backdrop{
+    display:none;
+    position: fixed;
+    inset: 64px 0 0 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1001;
+  }
+  body.nav-open .nav-backdrop{ display:block; }
+  /* Prevent scrolling page when nav open */
+  body.nav-open{ overflow:hidden; }
+}
+
+
+/* ===== v4.5 Slide-in Drawer Nav (mobile) ===== */
+@media (max-width:768px){
+  header{ z-index: 1000; }
+  nav{ position: relative; }
+  /* Drawer base */
+  nav ul{
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    width: min(82vw, 360px);
+    background:#fff;
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Start hidden off-canvas for LTR by default */
+    left: -100%;
+    right: auto;
+    transform: translateX(0);
+    transition: left .28s ease, right .28s ease;
+    z-index: 1002;
+  }
+  /* When open in LTR */
+  nav ul.open{ left: 0; }
+  /* RTL variant: anchor drawer to the right */
+  html[dir="rtl"] nav ul{
+    left: auto;
+    right: -100%;
+  }
+  html[dir="rtl"] nav ul.open{
+    right: 0;
+  }
+  nav li a{ display:block; padding:12px 20px; }
+  .nav-toggle{ display:block; }
+
+  /* Backdrop covers full viewport under header */
+  .nav-backdrop{
+    display:none;
+    position: fixed;
+    inset: 64px 0 0 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1001;
+  }
+  body.nav-open .nav-backdrop{ display:block; }
+
+  /* Prevent body scroll while drawer open */
+  body.nav-open{ overflow: hidden; }
+}
+
+
+/* v4.6 ensure hamburger button is always clickable */
+@media (max-width:768px){
+  .nav-toggle{ position: relative; z-index: 1100; }
+}
