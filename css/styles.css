@@ -245,3 +245,9 @@ header{ z-index: 1000; }
 @media (max-width:768px){
   .nav-toggle{ position: relative; z-index: 1100; }
 }
+
+
+/* v4.7 AR cleanup: fine-tune RTL paddings and drawer */
+html[dir="rtl"] nav li a{ padding:12px 20px; text-align:right; }
+html[dir="rtl"] .btn-group{ justify-content:flex-start; }
+html[dir="rtl"] .rfq-cta p{ text-align:right; }
