@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../css/styles.css"/>
 </head>
 <body>
-  <header><nav class="container"><div class="brand"><span class="logo"></span>الدواي</div><ul><li><a class='' href='index.html'>الرئيسية</a></li><li><a class='' href='about.html'>من نحن</a></li><li><a class='' href='services.html'>الخدمات</a></li><li><a class='' href='capabilities.html'>القدرات</a></li><li><a class='' href='projects.html'>المشاريع</a></li><li><a class='' href='faqs.html'>الأسئلة الشائعة</a></li><li><a class='' href='news.html'>الأخبار</a></li><li><a class='' href='careers.html'>الوظائف</a></li><li><a class='active' href='contact.html'>تواصل</a></li></ul><a class="btn" href="../index.html">EN</a></nav></header>
+  <header><nav class='container'><div class='brand'><span class='logo'></span>الدواي</div><ul><li><a class='' href='index.html'>الرئيسية</a></li><li><a class='' href='about.html'>من نحن</a></li><li><a class='' href='services.html'>الخدمات</a></li><li><a class='' href='capabilities.html'>القدرات</a></li><li><a class='' href='projects.html'>المشاريع</a></li><li><a class='' href='faqs.html'>الأسئلة الشائعة</a></li><li><a class='' href='news.html'>الأخبار</a></li><li><a class='' href='careers.html'>الوظائف</a></li><li><a class='active' href='contact.html'>تواصل</a></li></ul><a class='btn' href='../index.html'>EN</a></nav></header>
   <main>
     <section class="container hero">
       <div>
@@ -19,32 +19,15 @@
       </div>
       <div class="media">صورة / فيديو</div>
     </section>
-    <section class="container"><h2>تواصل / طلب عرض سعر</h2>
-<div class="card" style="margin-top:12px">
-<form data-rfq data-mailto="rfq@el-dawy.eg" data-success="شكراً لك! سنعاود الاتصال خلال 1–2 يوم عمل." data-endpoint="">
-  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-    <div><label for="name"><strong>الاسم الكامل</strong></label><input id="name" name="name" type="text" required placeholder="اسمك" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div>
-    <div><label for="email"><strong>البريد الإلكتروني</strong></label><input id="email" name="email" type="email" required placeholder="you@company.com" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div>
-    <div><label for="phone"><strong>الهاتف</strong></label><input id="phone" name="phone" type="tel" placeholder="+20 ..." pattern="^[0-9+()\-\s]{6,}$" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div>
-    <div><label for="company"><strong>الشركة</strong></label><input id="company" name="company" type="text" required placeholder="شركة" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div>
-    <div><label for="service"><strong>الخدمة</strong></label><select id="service" name="service" required style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px;background:#fff"><option value="">اختر خدمة…</option><option>استخراج وتعدين</option><option>السحق والطحن</option><option>لوجستيات الموانئ</option><option>حلول مشاريع متكاملة</option></select></div>
-    <div><label for="volume"><strong>الحجم التقديري (طن)</strong></label><input id="volume" name="volume" type="number" min="1" step="1" required placeholder="مثال: 50000" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div>
-    <div><label for="timeline"><strong>الجدول الزمني</strong></label><input id="timeline" name="timeline" type="text" placeholder="مثال: يناير–مارس 2026" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div>
-  </div>
-  <div style="margin-top:12px"><label for="message"><strong>تفاصيل المشروع</strong></label><textarea id="message" name="message" rows="5" required placeholder="صف بإيجاز الموقع والترسّب والموقع والقيود…" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></textarea></div>
-  <div style="margin-top:14px;display:flex;gap:10px;align-items:center"><label><input type="checkbox" required> أوافق على معالجة بياناتي لغرض هذا الطلب.</label></div>
-  <div style="margin-top:16px;display:flex;gap:10px"><button type="submit" class="btn primary">إرسال الطلب</button><a class="btn" href="mailto:rfq@el-dawy.eg">إرسال بريد</a></div>
-  <p class="muted" style="margin-top:10px">ملاحظة: لتفعيل الإرسال عبر API بدلاً من البريد، انشر <code>/api/quote</code> وحدّد قيمة <code>data-endpoint</code> في هذا النموذج.</p>
-</form>
-</div></section>
+    <section class="container"><h2>تواصل / طلب عرض سعر</h2><div class="card" style="margin-top:12px"><form data-rfq data-mailto="rfq@el-dawy.eg" data-success="شكراً لك! سنعاود الاتصال خلال 1–2 يوم عمل." data-endpoint=""><div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"><div><label for="name"><strong>الاسم الكامل</strong></label><input id="name" name="name" type="text" required placeholder="اسمك" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div><div><label for="email"><strong>البريد الإلكتروني</strong></label><input id="email" name="email" type="email" required placeholder="you@company.com" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div><div><label for="phone"><strong>الهاتف</strong></label><input id="phone" name="phone" type="tel" placeholder="+20 ..." pattern="^[0-9+()\-\s]{6,}$" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div><div><label for="company"><strong>الشركة</strong></label><input id="company" name="company" type="text" required placeholder="شركة" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div><div><label for="service"><strong>الخدمة</strong></label><select id="service" name="service" required style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px;background:#fff"><option value="">اختر خدمة…</option><option>استخراج وتعدين</option><option>السحق والطحن</option><option>لوجستيات الموانئ</option><option>حلول مشاريع متكاملة</option></select></div><div><label for="volume"><strong>الحجم التقديري (طن)</strong></label><input id="volume" name="volume" type="number" min="1" step="1" required placeholder="مثال: 50000" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div><div><label for="timeline"><strong>الجدول الزمني</strong></label><input id="timeline" name="timeline" type="text" placeholder="مثال: يناير–مارس 2026" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></div></div><div style="margin-top:12px"><label for="message"><strong>تفاصيل المشروع</strong></label><textarea id="message" name="message" rows="5" required placeholder="صف بإيجاز الموقع والترسّب والموقع والقيود…" style="width:100%;margin-top:6px;padding:10px;border:1px solid #e5e5e5;border-radius:10px"></textarea></div><div style="margin-top:14px;display:flex;gap:10px;align-items:center"><label><input type="checkbox" required> أوافق على معالجة بياناتي لغرض هذا الطلب.</label></div><div style="margin-top:16px;display:flex;gap:10px"><button type="submit" class="btn primary">إرسال الطلب</button><a class="btn" href="mailto:rfq@el-dawy.eg">إرسال بريد</a></div><p class="muted" style="margin-top:10px">ملاحظة: لتفعيل الإرسال عبر API بدلاً من البريد، انشر <code>/api/quote</code> وحدّد قيمة <code>data-endpoint</code> في هذا النموذج.</p></form></div></section>
   </main>
-  <footer><div class="container footer-cols">
-    <div><div class='brand'><span class='logo'></span>الدواي</div><p style='color:#666;margin-top:8px'>حلول الفوسفات من المنجم إلى الميناء.</p></div>
-    <div><strong>الشركة</strong><ul style='list-style:none;margin-top:8px'><li>من نحن</li><li>المشاريع</li><li>الوظائف</li><li>الأخبار</li></ul></div>
-    <div><strong>الخدمات</strong><ul style='list-style:none;margin-top:8px'><li>استخراج وتعدين</li><li>السحق والطحن</li><li>لوجستيات الموانئ</li><li>حلول متكاملة</li></ul></div>
-    <div><strong>تواصل</strong><ul style='list-style:none;margin-top:8px'><li>دمياط • سفاجا • العين السخنة</li><li>+20 (xxx) xxx‑xxxx</li><li>info@el‑dawy.eg</li></ul>
-      <a class='btn primary' href="contact.html">اطلب عرض سعر</a></div></div>
-    <div class="copy">© 2025 الدواي. جميع الحقوق محفوظة.</div></footer>
+  <footer><div class='container footer-cols'>
+      <div><div class='brand'><span class='logo'></span>الدواي</div><p style='color:#666;margin-top:8px'>حلول الفوسفات من المنجم إلى الميناء.</p></div>
+      <div><strong>الشركة</strong><ul style='list-style:none;margin-top:8px'><li>من نحن</li><li>المشاريع</li><li>الوظائف</li><li>الأخبار</li></ul></div>
+      <div><strong>الخدمات</strong><ul style='list-style:none;margin-top:8px'><li>استخراج وتعدين</li><li>السحق والطحن</li><li>لوجستيات الموانئ</li><li>حلول متكاملة</li></ul></div>
+      <div><strong>تواصل</strong><ul style='list-style:none;margin-top:8px'><li>دمياط • سفاجا • العين السخنة</li><li>+20 (xxx) xxx‑xxxx</li><li>info@el‑dawy.eg</li></ul>
+        <a class='btn primary' href='contact.html'>اطلب عرض سعر</a></div></div>
+      <div class='copy'>© 2025 الدواي. جميع الحقوق محفوظة.</div></footer>
   <script src="../js/app.js" defer></script>
 </body>
 </html>
