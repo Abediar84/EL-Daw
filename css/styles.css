@@ -39,3 +39,26 @@ main{padding-bottom:0}
 
 /* RTL */
 html[dir=rtl] body{font-family:'Noto Kufi Arabic',Tahoma,Arial,sans-serif}
+
+
+/* v4 cleanliness tweaks */
+:root{
+  --ring: rgba(0,0,0,.06);
+}
+.card{border-color: var(--ring)}
+.media{border-color: var(--ring)}
+/* Section titles spacing */
+h2{margin-bottom: var(--space-sm)}
+/* CTA band that appears above the contact form */
+.rfq-cta{
+  background:#fff;
+  border:1px solid var(--ring);
+  border-radius:16px;
+  padding: var(--space-sm);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.rfq-cta p{margin:0;color:var(--muted)}
+.rfq-cta .actions{display:flex;gap:10px;flex-wrap:wrap}
+/* Ensure clean end of page */
+main>section:last-of-type{padding-bottom: var(--space-md)}
+footer{padding-top: var(--space-sm)}
