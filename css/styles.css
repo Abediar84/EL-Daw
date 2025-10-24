@@ -251,3 +251,231 @@ header{ z-index: 1000; }
 html[dir="rtl"] nav li a{ padding:12px 20px; text-align:right; }
 html[dir="rtl"] .btn-group{ justify-content:flex-start; }
 html[dir="rtl"] .rfq-cta p{ text-align:right; }
+
+
+/* ===== v4.8 ELDAWY Brand Theme (Dark + Gold) + Recommendations ===== */
+:root{
+  --brand-gold:#D4AF37; --brand-black:#000000; --brand-grey:#504F55;
+  --bg:#0B0B0C; --panel:#131316; --line:#26262A; --text:#F3F4F6; --muted:#A3A3AD;
+  --radius:16px; --container:1200px;
+}
+
+/* Global dark */
+body{ background:var(--bg); color:var(--text); }
+header{ background: rgba(13,13,15,.75); backdrop-filter: blur(8px); border-bottom:1px solid var(--line); }
+nav .logo{ background: var(--brand-gold); }
+nav li a{ color: var(--text); }
+nav li a.active{ background: rgba(255,255,255,.06); }
+a:hover{ color: var(--brand-gold); }
+
+/* Focus (a11y) */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.btn{ border-color:var(--line); color:var(--text); background:transparent; transition:.15s; }
+.btn.primary{ background:var(--brand-gold); color:#111; border-color:var(--brand-gold); }
+.btn.primary:hover{ filter:brightness(1.05); box-shadow:0 6px 20px rgba(212,175,55,.35); }
+.btn:hover{ border-color:rgba(212,175,55,.55); }
+
+/* Cards / media */
+.card{ background:var(--panel); border-color:var(--line); }
+.card:hover{ box-shadow:0 0 0 1px rgba(212,175,55,.25), 0 10px 30px rgba(0,0,0,.35); }
+.media{ background: radial-gradient(120% 120% at 0% 0%, #1B1B1F 0%, #0E0E11 60%); border-color:var(--line); }
+
+/* Section headings with gold underline */
+h2{ position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-8px; width:56px; height:2px; background:linear-gradient(90deg,var(--brand-gold), transparent); }
+
+/* Footer */
+footer{ background:#0E0E11; border-top:1px solid var(--line); }
+footer li, footer p{ color:var(--muted); }
+footer strong, .brand{ color:var(--text); }
+.copy{ color:#8E9099; }
+
+/* Forms */
+input, select, textarea{ background:#0F1013; color:var(--text); border:1px solid var(--line); border-radius:12px; padding:10px; }
+input::placeholder, textarea::placeholder{ color:#7B7D86; }
+.muted{ color:var(--muted)!important; }
+
+/* Hero spacing + look */
+.hero h1{ letter-spacing:.2px; }
+.hero p{ color:var(--muted)!important; }
+.btn-group{ margin-top: var(--space-sm); margin-bottom: var(--space-md); }
+
+/* Mobile drawer colors */
+@media (max-width:768px){
+  nav ul{ background:#111215; border-color:#1F2026; }
+  .nav-backdrop{ background: rgba(0,0,0,.5); }
+}
+
+/* RTL niceties */
+html[dir="rtl"] nav li a{ padding:12px 20px; text-align:right; }
+html[dir="rtl"] .btn-group{ justify-content:flex-start; }
+html[dir="rtl"] .rfq-cta p{ text-align:right; }
+
+/* Layered hero option (strata vibe) */
+.hero--layered{ position:relative; isolation:isolate; padding-top: calc(var(--space-lg) + 24px); }
+.hero--layered::before{
+  content:""; position:absolute; inset:-40px -24px auto -24px; height:52%;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35), rgba(11,11,12,0)),
+    radial-gradient(120% 120% at 80% -10%, rgba(212,175,55,.10), rgba(0,0,0,0)),
+    linear-gradient(135deg, #141419, #0B0B0C);
+  z-index:-1;
+}
+
+/* Font stacks (if Google Fonts are loaded) */
+html[dir="ltr"] body{ font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+html[dir="ltr"] h1, html[dir="ltr"] h2, html[dir="ltr"] h3{ font-family: "Oswald", "Manrope", system-ui, sans-serif; letter-spacing:.2px; }
+html[dir="rtl"] body{ font-family: "Cairo", Tahoma, Arial, sans-serif; }
+
+
+/* ===== v4.8.1 Contact page polish ===== */
+/* RFQ CTA band: less bright, better contrast on dark */
+.rfq-cta{
+  background: linear-gradient(180deg, #17171b, #141417);
+  border: 1px solid #2b2b31;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 6px 24px rgba(0,0,0,0.25);
+  border-radius: 14px;
+}
+.rfq-cta p{ color: var(--muted); }
+.rfq-cta .btn{ border-color:#36363c; }
+.rfq-cta .btn.primary{ background: var(--brand-gold); color:#111; }
+.rfq-cta .btn:hover{ border-color: rgba(212,175,55,.55); }
+
+/* Contact card form: improve surface + inputs */
+.contact-form-card,
+section .card form[data-rfq]::-webkit-scrollbar { /* noop for specificity */ }
+
+/* Make all "form.card" blocks richer */
+.card form[data-rfq],
+form[data-rfq]{
+  --field-bg:#0F1013;
+  --field-border:#3a3940;
+  --field-border-focus: var(--brand-gold);
+  --field-placeholder:#6e6f77;
+}
+
+/* Labels */
+form[data-rfq] label strong{ color:#E8E8EE; font-weight:600; }
+form[data-rfq] label{ color:#C9C9D3; }
+
+/* Inputs */
+form[data-rfq] input,
+form[data-rfq] select,
+form[data-rfq] textarea{
+  background: var(--field-bg);
+  color: var(--text);
+  border: 1px solid var(--field-border);
+  border-radius: 12px;
+  padding: 12px 12px;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+form[data-rfq] input::placeholder,
+form[data-rfq] textarea::placeholder{ color: var(--field-placeholder); }
+
+/* Focus ring in brand gold */
+form[data-rfq] input:focus,
+form[data-rfq] select:focus,
+form[data-rfq] textarea:focus{
+  border-color: var(--field-border-focus);
+  box-shadow: 0 0 0 3px rgba(212,175,55,.18);
+  background:#111217;
+}
+
+/* Select style tweak */
+form[data-rfq] select{
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #8b8b95 50%), linear-gradient(135deg, #8b8b95 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1.15em), calc(100% - 13px) calc(1.15em);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+/* Checkbox + caption */
+form[data-rfq] input[type="checkbox"]{ width: 16px; height: 16px; vertical-align: -2px; }
+form[data-rfq] label input[type="checkbox"] + *{ color:#D7D7E0; }
+
+/* Form action buttons */
+form[data-rfq] .btn.primary{ background: var(--brand-gold); color:#111; border-color:var(--brand-gold); }
+form[data-rfq] .btn{ border-color:#3a3940; }
+form[data-rfq] .btn:hover{ border-color: rgba(212,175,55,.55); }
+
+/* Arabic alignment (tighten) */
+html[dir="rtl"] form[data-rfq] select{ padding-left: 36px; padding-right: 12px; background-position: 18px calc(1.15em), 13px calc(1.15em); }
+
+
+/* ===== v4.8.2 Fix: dark dropdown + gold hover ===== */
+form[data-rfq] select {
+  background-color: #0F1013 !important;
+  color: var(--text) !important;
+  border: 1px solid var(--field-border);
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #8b8b95 50%), 
+                    linear-gradient(135deg, #8b8b95 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1.15em), 
+                       calc(100% - 13px) calc(1.15em);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+form[data-rfq] select option {
+  background-color: #111217 !important;
+  color: var(--text) !important;
+  transition: background 0.15s, color 0.15s;
+}
+form[data-rfq] select option:hover,
+form[data-rfq] select option:checked {
+  background-color: rgba(212,175,55,0.2) !important;
+  color: var(--brand-gold) !important;
+}
+html[dir="rtl"] form[data-rfq] select {
+  background-position: 18px calc(1.15em), 13px calc(1.15em);
+  padding-left: 36px;
+  padding-right: 12px;
+}
+
+
+/* ===== v4.8.3 Global dropdown styling (dark theme) ===== */
+form select {
+  background-color: #0F1013 !important;
+  color: var(--text) !important;
+  border: 1px solid var(--field-border, #3a3940);
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #8b8b95 50%),
+                    linear-gradient(135deg, #8b8b95 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1.15em),
+                       calc(100% - 13px) calc(1.15em);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+form select option {
+  background-color: #111217 !important;
+  color: var(--text) !important;
+  transition: background 0.15s, color 0.15s;
+}
+/* High-contrast brand hover/selected: gold bg + black text */
+form select option:hover,
+form select option:checked {
+  background-color: var(--brand-gold) !important;
+  color: #111 !important;
+}
+/* RTL alignment for Arabic pages */
+html[dir="rtl"] form select {
+  background-position: 18px calc(1.15em), 13px calc(1.15em);
+  padding-left: 36px;
+  padding-right: 12px;
+}
