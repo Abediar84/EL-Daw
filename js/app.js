@@ -17,3 +17,13 @@
     const form=document.querySelector('form[data-rfq]'); if(form){ form.addEventListener('submit', onSubmit); }
   });
 })();
+
+// v4.4 hamburger toggle
+document.addEventListener('DOMContentLoaded', ()=>{
+  const toggle=document.querySelector('.nav-toggle');
+  const menu=document.querySelector('nav ul');
+  if(toggle && menu){
+    toggle.addEventListener('click', ()=> menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  }
+});
