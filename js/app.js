@@ -59,3 +59,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
   });
 });
+
+
+// v4.8.5: Dynamic header height -> CSS var (--header-h) for reliable drawer top
+(function(){
+  function setHeaderVar(){
+    var header = document.querySelector('header');
+    if(!header) return;
+    var h = Math.ceil(header.getBoundingClientRect().height);
+    if(h && h > 0){
+      document.documentElement.style.setProperty('--header-h', h + 'px');
+    }
+  }
+  window.addEventListener('DOMContentLoaded', setHeaderVar);
+  window.addEventListener('load', setHeaderVar);
+  window.addEventListener('resize', setHeaderVar);
+  window.addEventListener('orientationchange', setHeaderVar);
+})();
+
+
+// v4.8.6: Android Chrome dynamic viewport var (--vh) using visualViewport
+(function(){
+  function setVH(){
+    var vv = window.visualViewport;
+    var h = vv ? vv.height : window.innerHeight;
+    if (h && h > 0){
+      document.documentElement.style.setProperty('--vh', h + 'px');
+    }
+  }
+  window.addEventListener('DOMContentLoaded', setVH);
+  window.addEventListener('load', setVH);
+  window.addEventListener('resize', setVH);
+  if (window.visualViewport){
+    window.visualViewport.addEventListener('resize', setVH);
+    window.visualViewport.addEventListener('scroll', setVH);
+  }
+})();

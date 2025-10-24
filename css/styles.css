@@ -511,3 +511,81 @@ html[dir="rtl"] form select {
     background: rgba(212,175,55,0.10);
   }
 }
+
+
+/* ===== v4.8.5 Drawer position/height fix ===== */
+:root{ --header-h: 64px; } /* fallback; JS will override */
+@media (max-width:768px){
+  header{ z-index: 1200; }
+  nav{ position: relative; }
+  /* Drawer panel */
+  nav ul{
+    position: fixed;
+    top: var(--header-h);
+    bottom: 0;
+    width: min(82vw, 360px);
+    background: #111215;
+    border-top: 1px solid #1F2026;
+    border-right: 1px solid #1F2026;
+    border-left: 1px solid #1F2026;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1202;
+    /* slide off-canvas by default */
+    transform: translateX(-100%);
+    transition: transform .28s ease;
+  }
+  /* LTR open: slide from left */
+  nav ul.open{ transform: translateX(0); }
+  /* RTL: anchor to right and slide from right */
+  html[dir="rtl"] nav ul{
+    right: 0; left: auto;
+    transform: translateX(100%);
+  }
+  html[dir="rtl"] nav ul.open{
+    transform: translateX(0);
+  }
+  /* Backdrop below drawer but above content */
+  .nav-backdrop{
+    display: none;
+    position: fixed;
+    left: 0; right: 0;
+    top: var(--header-h); bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 1201;
+  }
+  body.nav-open .nav-backdrop{ display:block; }
+
+  /* Prevent page scroll when drawer open */
+  body.nav-open{ overflow: hidden; }
+}
+
+
+/* ===== v4.8.6 Android Chrome drawer fixes ===== */
+:root{ --vh: 100vh; } /* fallback; JS sets real value via visualViewport */
+
+/* Prefer modern dynamic viewport units when supported */
+@supports (height: 100dvh) {
+  :root{ --vh: 100dvh; }
+}
+@supports not (height: 100dvh) and (height: 100svh) {
+  :root{ --vh: 100svh; }
+}
+
+@media (max-width:768px){
+  /* Drawer uses dynamic height minus header */
+  nav ul{
+    top: var(--header-h);
+    height: calc(var(--vh) - var(--header-h));
+    bottom: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .nav-backdrop{
+    top: var(--header-h);
+    height: calc(var(--vh) - var(--header-h));
+    bottom: auto;
+  }
+}
