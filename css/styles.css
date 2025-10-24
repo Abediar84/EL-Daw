@@ -479,3 +479,35 @@ html[dir="rtl"] form select {
   padding-left: 36px;
   padding-right: 12px;
 }
+
+
+/* ===== v4.8.4 Mobile hamburger color/contrast & tap target ===== */
+@media (max-width:768px){
+  header{ z-index: 1100; }
+  .nav-toggle{
+    color: var(--text);              /* icon color (☰) visible on dark header */
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 8px 12px;               /* larger tap target */
+    line-height: 1;
+    position: relative;
+    z-index: 1101;                   /* above drawer/backdrop */
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  .nav-toggle:hover{ 
+    color: var(--brand-gold);
+    border-color: rgba(212,175,55,.55);
+    background: rgba(255,255,255,0.08);
+  }
+  .nav-toggle:focus-visible{
+    outline: 2px solid var(--brand-gold);
+    outline-offset: 2px;
+  }
+  /* When menu open, give button a gold tint for state feedback */
+  body.nav-open .nav-toggle{
+    color: var(--brand-gold);
+    border-color: rgba(212,175,55,.65);
+    background: rgba(212,175,55,0.10);
+  }
+}
